@@ -1,0 +1,23 @@
+{
+  "name": "@skj/remote-case-studies",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Module Federation remote: interactive case-study widgets (Lighthouse slider, bundle chart).",
+  "scripts": {
+    "build": "webpack --mode production",
+    "dev": "webpack --mode development --watch",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "recharts": "^3.10.0"
+  },
+  "devDependencies": {
+    "@skj/contracts": "*",
+    "@skj/mf-config": "*",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "typescript": "^5.9.3"
+  }
+}

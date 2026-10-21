@@ -1,0 +1,89 @@
+.figure {
+  margin: 0;
+  display: grid;
+  gap: var(--space-3);
+  padding: var(--space-5);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--bg-elevated);
+}
+
+.svg {
+  width: 100%;
+  height: auto;
+  font-family: var(--font-sans);
+}
+
+.caption {
+  color: var(--fg-muted);
+  font-size: 0.875rem;
+}
+
+.box {
+  fill: var(--bg);
+  stroke: var(--border-strong);
+  stroke-width: 1.5;
+}
+
+.boxAccent {
+  fill: var(--accent-soft);
+  stroke: var(--accent);
+  stroke-width: 1.5;
+}
+
+.label {
+  fill: var(--fg);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.sub {
+  fill: var(--fg-muted);
+  font-size: 12px;
+}
+
+.labelAccent {
+  fill: var(--accent-soft-fg);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.line {
+  stroke: var(--fg-subtle);
+  stroke-width: 1.5;
+  fill: none;
+}
+
+.lineDashed {
+  stroke: var(--fg-subtle);
+  stroke-width: 1.5;
+  stroke-dasharray: 5 4;
+  fill: none;
+}
+
+.arrowHead {
+  fill: var(--fg-subtle);
+}
+
+.zone {
+  fill: none;
+  stroke: var(--border);
+  stroke-dasharray: 4 4;
+}
+
+.zoneLabel {
+  fill: var(--fg-subtle);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Wide diagrams scroll horizontally on small screens instead of shrinking text to illegibility. */
+.scroll {
+  overflow-x: auto;
+}
+
+.wide {
+  min-width: 640px;
+}

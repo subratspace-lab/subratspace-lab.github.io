@@ -1,0 +1,32 @@
+[
+  {
+    "id": "frontend",
+    "label": "Frontend",
+    "items": ["React.js (v16–19)", "TypeScript", "Next.js", "Redux Toolkit", "Webpack Module Federation", "Recharts"]
+  },
+  {
+    "id": "styling",
+    "label": "UI & styling",
+    "items": ["Tailwind CSS", "Ant Design", "Styled-Components"]
+  },
+  {
+    "id": "backend",
+    "label": "Backend & data",
+    "items": ["Node.js", "Express", "PostgreSQL", "DynamoDB"]
+  },
+  {
+    "id": "cloud",
+    "label": "Cloud",
+    "items": ["AWS Lambda", "EC2", "S3", "API Gateway", "CloudWatch"]
+  },
+  {
+    "id": "auth",
+    "label": "Auth",
+    "items": ["Azure MSAL", "OAuth 2.0"]
+  },
+  {
+    "id": "testing",
+    "label": "Testing",
+    "items": ["Jest", "React Testing Library"]
+  }
+]

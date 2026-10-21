@@ -1,0 +1,30 @@
+{
+  "name": "@skj/shell",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --port 3000",
+    "build": "next build && node ../../scripts/flatten-rsc-segments.mjs out",
+    "start": "next start --port 3000",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@module-federation/runtime": "^2.9.2",
+    "@skj/content": "*",
+    "@skj/contracts": "*",
+    "@skj/ui-tokens": "*",
+    "framer-motion": "^12.0.0",
+    "next": "^16.4.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "eslint": "^9.30.0",
+    "eslint-config-next": "^16.4.0",
+    "typescript": "^5.9.3"
+  }
+}

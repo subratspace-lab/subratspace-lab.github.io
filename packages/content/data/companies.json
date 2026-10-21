@@ -1,0 +1,9 @@
+[
+  {
+    "slug": "avoma",
+    "name": "Avoma",
+    "intro": "Hi Avoma team. I build React and TypeScript frontends for AI-driven, data-heavy products, so I've pinned the two projects closest to what you ship.",
+    "pinnedProjects": ["ai-agentic-platform", "saas-elearning"],
+    "highlightMetricIds": ["lighthouse", "bundle", "mttd"]
+  }
+]

@@ -1,0 +1,63 @@
+.toggle {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 3px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  background: var(--bg-sunken);
+  isolation: isolate;
+}
+
+/* Sliding pill: half the track, moved by the current mode. */
+.toggle::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 3px;
+  bottom: 3px;
+  left: 3px;
+  width: calc(50% - 3px);
+  border-radius: var(--radius-pill);
+  background: var(--accent);
+  transition: transform 260ms var(--ease-out);
+}
+
+:global(:root[data-mode="deep"]) .toggle::before {
+  transform: translateX(100%);
+}
+
+.option {
+  min-height: 36px;
+  padding: 0 var(--space-3);
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--fg-muted);
+  font-size: 0.875rem;
+  font-weight: 550;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color 200ms var(--ease-out);
+}
+
+.option:hover {
+  color: var(--fg);
+}
+
+:global(:root[data-mode="skim"]) .option[data-value="skim"],
+:global(:root[data-mode="deep"]) .option[data-value="deep"] {
+  color: var(--accent-fg);
+}
+
+@media (min-width: 560px) {
+  .option {
+    padding: 0 var(--space-4);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .toggle::before {
+    transition: none;
+  }
+}

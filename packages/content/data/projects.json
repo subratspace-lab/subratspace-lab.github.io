@@ -1,0 +1,360 @@
+[
+  {
+    "slug": "ai-agentic-platform",
+    "kind": "client",
+    "title": "Enterprise AI Agentic Management Platform",
+    "oneLiner": "A modular React 19 frontend for managing AI agents, with role-based access and real-time analytics.",
+    "period": {
+      "start": 2025,
+      "end": 2026
+    },
+    "employer": "Clairvoyant (EXL)",
+    "ownership": "Led ~60–70% of the frontend",
+    "featured": true,
+    "confidential": true,
+    "stack": [
+      "React 19",
+      "TypeScript",
+      "Tailwind CSS",
+      "Recharts",
+      "Axios",
+      "Azure MSAL",
+      "OAuth 2.0"
+    ],
+    "metricIds": [
+      "lighthouse",
+      "bundle"
+    ],
+    "caseStudy": {
+      "problem": [
+        "The client needed one place to build, configure and run AI agents. The platform was organised into modules, such as Models, Solutions and Agents, each its own area of the app.",
+        "All four modules needed the same UI building blocks, the same access rules and live operational data, and building each one separately would have meant four slightly different products."
+      ],
+      "constraints": [
+        "One component architecture had to serve four platform modules without forking.",
+        "Access control had to mean the same thing in frontend routing and in API-level authorization.",
+        "Identity came from Azure MSAL with OAuth 2.0.",
+        "A frontend team of four, so shared foundations mattered more than per-module polish."
+      ],
+      "decisions": [
+        {
+          "title": "A modular component architecture shared by four modules",
+          "body": "I designed the component layer as composable primitives and module-level compositions, so each platform module consumed the same pieces instead of rebuilding them."
+        },
+        {
+          "title": "One role model, enforced in two places",
+          "body": "I implemented RBAC on Azure MSAL and OAuth 2.0 with a single role model. The frontend used it to gate routes and UI, and the same roles drove API-level authorization, so the two could not drift apart."
+        },
+        {
+          "title": "Shaping the API contracts",
+          "body": "I worked with the backend on the REST contracts the dashboards needed, and centralized data fetching and error handling in one Axios layer instead of per-component calls."
+        },
+        {
+          "title": "Cutting the bundle",
+          "body": "I used code splitting, memoization and lazy loading to cut the bundle by about 30%, which took the Lighthouse performance score from 62 to 88."
+        }
+      ],
+      "result": [
+        "Lighthouse performance went from 62 to 88.",
+        "The bundle shrank by about 30%.",
+        "Four platform modules shared one component architecture and one role model."
+      ],
+      "tech": [
+        "React 19",
+        "TypeScript",
+        "Tailwind CSS",
+        "Recharts",
+        "Axios",
+        "Azure MSAL",
+        "OAuth 2.0",
+        "REST"
+      ]
+    },
+    "links": []
+  },
+  {
+    "slug": "saas-elearning",
+    "kind": "client",
+    "title": "SaaS E-Learning & Publication Platform",
+    "oneLiner": "A multi-tenant LMS split into independently deployable micro-frontends with Webpack Module Federation.",
+    "period": {
+      "start": 2023,
+      "end": 2025
+    },
+    "employer": "Clairvoyant (EXL)",
+    "ownership": "~50–60% of the frontend, plus backend contributions",
+    "featured": true,
+    "confidential": true,
+    "stack": [
+      "React",
+      "TypeScript",
+      "Redux Toolkit",
+      "React Router v6",
+      "Webpack Module Federation",
+      "Ant Design",
+      "Styled-Components",
+      "Node.js",
+      "Express",
+      "PostgreSQL",
+      "AWS"
+    ],
+    "metricIds": [
+      "mttd"
+    ],
+    "caseStudy": {
+      "problem": [
+        "Education companies needed to put learning resources in front of students and educators through accessible digital experiences. The platform supported back-to-school activities: helping people discover resources, understand how to access learning materials and get ready for the academic year.",
+        "Each education company ran as its own tenant, and the course, exam and admin experiences had to ship on their own schedules without one breaking the others."
+      ],
+      "constraints": [
+        "Course, Exam and Admin had to be independently deployable.",
+        "Peak exam periods brought 10K+ concurrent users, so frontend failures had to be caught quickly.",
+        "A 21-person team working across the modules at once, so boundaries between them had to be clear."
+      ],
+      "decisions": [
+        {
+          "title": "Micro-frontends with Module Federation",
+          "body": "I architected the LMS as a host with Course, Exam and Admin remotes using Webpack Module Federation, so each module could build and deploy independently."
+        },
+        {
+          "title": "Predictable state across modules",
+          "body": "I used Redux Toolkit and React Router v6 for state and routing inside the modules I owned, roughly 50–60% of the frontend."
+        },
+        {
+          "title": "Admin dashboards",
+          "body": "I built the admin dashboards with Ant Design and Styled-Components. Admin screens are mostly dense tables, forms, filters and date pickers, and Ant Design ships all of those with accessibility and keyboard support built in. That let me spend the time on admin workflows instead of building primitives, while Styled-Components kept the theme consistent with the rest of the platform."
+        },
+        {
+          "title": "Backend work for faster detection",
+          "body": "I contributed backend work in Node.js, Express and PostgreSQL on EC2, plus Lambda, S3 and CloudWatch. That cut frontend mean time to detect issues by 40% during peak exam periods."
+        },
+        {
+          "title": "Standards that scale the team",
+          "body": "I set up a shared component library and PR review standards, which made onboarding faster and lowered the UI bug rate."
+        }
+      ],
+      "result": [
+        "Frontend MTTD dropped by 40% during peak exam periods with 10K+ concurrent users.",
+        "Course, Exam and Admin deployed independently.",
+        "Onboarding got faster and the UI bug rate went down after the shared library and review standards."
+      ],
+      "tech": [
+        "React",
+        "TypeScript",
+        "Redux Toolkit",
+        "React Router v6",
+        "Webpack Module Federation",
+        "Ant Design",
+        "Styled-Components",
+        "Node.js",
+        "Express",
+        "PostgreSQL",
+        "AWS EC2",
+        "AWS Lambda",
+        "S3",
+        "CloudWatch"
+      ]
+    },
+    "links": []
+  },
+  {
+    "slug": "edtech-platform",
+    "kind": "client",
+    "title": "EdTech Learning Platform",
+    "oneLiner": "A course platform where learners pay to enroll and learn: student dashboards, instructor portals and Stripe billing on serverless AWS.",
+    "period": {
+      "start": 2021,
+      "end": 2022
+    },
+    "employer": "Clairvoyant (EXL)",
+    "ownership": "One of a 4-person team",
+    "featured": true,
+    "confidential": true,
+    "stack": [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "AWS Lambda",
+      "API Gateway",
+      "DynamoDB",
+      "Stripe"
+    ],
+    "metricIds": [
+      "payments",
+      "mvp"
+    ],
+    "caseStudy": {
+      "problem": [
+        "An online course platform: learners browse a catalogue, pay to enroll in courses and learn at their own pace, while instructors create and manage their courses.",
+        "It needed student dashboards, instructor portals and course workflows, with payments and recurring billing that worked without manual chasing."
+      ],
+      "constraints": [
+        "A 4-person team.",
+        "Serverless AWS: Lambda, API Gateway and DynamoDB.",
+        "Recurring billing and invoicing had to run without manual chasing.",
+        "A fixed MVP deadline."
+      ],
+      "decisions": [
+        {
+          "title": "Next.js for the product surfaces",
+          "body": "I built student dashboards, instructor portals and course workflows in React, Next.js and TypeScript."
+        },
+        {
+          "title": "Webhook-driven billing",
+          "body": "I integrated Stripe with webhook handling for recurring billing and automated invoicing, so payment state changes reached the app as they happened. Failed payment follow-ups dropped by 60%."
+        }
+      ],
+      "result": [
+        "The MVP shipped two weeks ahead of schedule.",
+        "There were zero critical post-launch defects.",
+        "Failed payment follow-ups dropped by 60%."
+      ],
+      "tech": [
+        "React",
+        "Next.js",
+        "TypeScript",
+        "AWS Lambda",
+        "API Gateway",
+        "DynamoDB",
+        "Stripe"
+      ]
+    },
+    "links": []
+  },
+  {
+    "slug": "pbi-autobuilder",
+    "kind": "personal",
+    "title": "PBI AutoBuilder",
+    "oneLiner": "From raw data and a client brief to a ready-to-open Power BI dashboard: a local React + Node.js app that generates the cleaning, model, DAX and report for you.",
+    "period": {
+      "start": 2026,
+      "end": 2026
+    },
+    "ownership": "Solo project: design, frontend, backend and Power BI generation",
+    "featured": false,
+    "confidential": false,
+    "stack": [
+      "React 18",
+      "TypeScript",
+      "Node.js",
+      "Express",
+      "zod",
+      "Power Query M",
+      "DAX",
+      "TMDL",
+      "PBIR"
+    ],
+    "metricIds": [],
+    "caseStudy": {
+      "problem": [
+        "Building a Power BI dashboard from raw data repeats the same steps on every project: understanding the business, cleaning messy data in Power Query, designing a data model, writing DAX measures and laying out visuals.",
+        "Analysts spend hours clicking through the same transformations, and beginners often get the model or the DAX wrong."
+      ],
+      "constraints": [
+        "It had to run only on localhost. The AI receives schema statistics and about 15 sample rows, never the full dataset.",
+        "It had to produce reliable output with free or small AI models, and with no AI at all.",
+        "The exported project had to refresh on any PC, with no file paths to fix.",
+        "What the user previews had to match exactly what Power BI loads."
+      ],
+      "howItWorks": [
+        {
+          "title": "Upload",
+          "body": "Raw CSV or Excel data, plus the client brief."
+        },
+        {
+          "title": "Understand",
+          "body": "Profiles every column (types, blanks, duplicates, inconsistent casing, currency symbols, mixed date formats) and summarises the business, the questions to answer and the KPIs."
+        },
+        {
+          "title": "Clean",
+          "body": "Suggests Power Query steps from a library of 18 operations, such as type fixes, trimming, replacing values, de-duplication, splitting columns, calculated columns, and bands like DPD buckets and age groups. A live before/after preview and the generated M code sit side by side."
+        },
+        {
+          "title": "Model",
+          "body": "Designs a star schema, detecting fact and dimension tables from key uniqueness, including one-to-one keys shared across several sources. Generates a Date table marked as the date table, shown as an interactive diagram."
+        },
+        {
+          "title": "Measures",
+          "body": "Writes layered DAX: base measures, then ratios with DIVIDE, then time intelligence (YTD, PY, YoY, MoM). A built-in linter checks every table and column reference."
+        },
+        {
+          "title": "Dashboard",
+          "body": "Lays out KPI cards, trend and breakdown charts, a matrix and slicers on an automatic grid, with a colour theme. A live preview computes the real numbers."
+        },
+        {
+          "title": "Export",
+          "body": "Generates a Power BI Project (.pbip) with a TMDL semantic model, a PBIR report and a theme, plus a README documenting every cleaning step and measure, the expected totals and demo talking points."
+        }
+      ],
+      "decisions": [
+        {
+          "title": "The AI decides, templates generate",
+          "body": "The language model never writes Power BI files. It returns small JSON specs (cleaning operations, schema, measures, visual list) that are validated with zod, shown to the user and turned into Power Query M, TMDL and PBIR by tested generators. A deterministic rules engine produces every step with no AI at all."
+        },
+        {
+          "title": "One engine, two outputs",
+          "body": "Every cleaning operation is implemented twice, as JavaScript for the live preview and as Power Query M for Power BI, so what the user previews is what Power BI loads."
+        },
+        {
+          "title": "A small DAX evaluator",
+          "body": "It computes measures (SUM, COUNT, DISTINCTCOUNT, DIVIDE, CALCULATE with filters) directly from the data. That powers the dashboard preview and gives the user expected totals to check after refresh."
+        },
+        {
+          "title": "Portable output",
+          "body": "The raw data is compressed (deflate + base64) inside the Power Query step, like Power BI’s “Enter data”, so the exported project refreshes on any PC without file paths."
+        },
+        {
+          "title": "Domain-aware rules",
+          "body": "The engine recognises patterns such as days-past-due columns, credit scores and dates of birth, and generates collections KPIs (Delinquency %, NPA %, Overdue Outstanding) and analysis bands from them."
+        },
+        {
+          "title": "Private and provider-agnostic AI",
+          "body": "The app runs only on localhost and works offline through Ollama. Any OpenAI-compatible model (Google Gemini, Groq, OpenRouter, Ollama) can be switched from the Settings page."
+        }
+      ],
+      "result": [
+        "A 7-step wizard that exports a Power BI Project which opens in Power BI Desktop.",
+        "About 8,000 lines of TypeScript: about 4,700 for the server, 2,900 for the client and 330 of shared types.",
+        "Unit tests (Vitest) cover value parsing, M generation, the DAX linter and evaluator, Excel date handling and the embedded-data round trip.",
+        "Tested end to end on a deliberately messy retail export (1,844 rows with mixed date formats, currency text, duplicates and blank rows) and a 3-table banking collections dataset (3,000 rows across loans, customers and bureau data)."
+      ],
+      "learned": [
+        "How Power BI stores reports and models as text (TMDL, PBIR), and how Power Query and DAX evaluate data.",
+        "How to design LLM features so they’re reliable: structured output, schema validation and a deterministic fallback.",
+        "How to debug real-world issues once a project leaves my own PC, such as file paths and zip extraction on another computer."
+      ],
+      "tech": [
+        "React 18",
+        "TypeScript",
+        "Vite",
+        "Tailwind CSS",
+        "Zustand",
+        "TanStack Table",
+        "React Flow",
+        "Monaco Editor",
+        "Recharts",
+        "Node.js",
+        "Express",
+        "zod",
+        "SheetJS",
+        "PapaParse",
+        "pdf-parse",
+        "mammoth",
+        "Handlebars",
+        "OpenAI-compatible API (Gemini, Groq, OpenRouter, Ollama)",
+        "Power Query M",
+        "DAX",
+        "TMDL",
+        "PBIR",
+        "Power BI Project (.pbip)",
+        "Vitest"
+      ]
+    },
+    "links": [
+      {
+        "label": "GitHub",
+        "href": "https://github.com/subratspace-lab/pbi-autobuilder"
+      }
+    ]
+  }
+]

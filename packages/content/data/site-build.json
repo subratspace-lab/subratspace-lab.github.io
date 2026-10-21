@@ -1,0 +1,40 @@
+{
+  "title": "How this site is built",
+  "lead": "The site is a small version of the architecture I've worked with: a Next.js shell that loads independently built Module Federation remotes, with typed content, typed contracts and CI on every push. It is fully static, so it costs nothing to host.",
+  "decisions": [
+    {
+      "title": "A runtime federation host instead of a build plugin",
+      "body": "Next.js App Router has no supported Module Federation build plugin, so the shell is a runtime host. Each remote is built by webpack with @module-federation/enhanced, and the shell loads the containers in the browser with @module-federation/runtime."
+    },
+    {
+      "title": "One React, provided by the shell",
+      "body": "Remotes declare React as a shared singleton with import: false, so they can't bundle their own copy. Hooks and context work across the boundary, and each remote ships only its own code."
+    },
+    {
+      "title": "Failures stay inside their box",
+      "body": "Every remote mounts inside a boundary that handles both a failed network load and a crash during render, with a contained fallback and a retry. The case-study charts run this way."
+    },
+    {
+      "title": "Typed contracts at the boundary",
+      "body": "Props for every exposed module live in a shared contracts package. Both the shell and the remotes compile against it, so a breaking prop change fails typecheck on both sides."
+    },
+    {
+      "title": "Content is data, validated at build",
+      "body": "Copy, metrics, projects and company pages are JSON validated with Zod when the site builds. Broken cross-references and illustrative numbers that drift from the verified ones stop the build."
+    },
+    {
+      "title": "Recruiter mode without a server",
+      "body": "Skim and deep-dive modes are a data attribute on <html>, set before first paint from localStorage or ?mode=. CSS shows or hides sections, so pages stay static and search engines see everything."
+    },
+    {
+      "title": "Static export, free hosting",
+      "body": "next build produces plain HTML, JS and CSS with the remotes copied alongside. It deploys to Vercel's free tier or GitHub Pages with no server to run."
+    }
+  ],
+  "quality": [
+    "TypeScript strict across every package, including noUncheckedIndexedAccess.",
+    "Jest and React Testing Library for logic and components; Playwright for end-to-end flows and axe accessibility checks.",
+    "GitHub Actions runs lint, typecheck, unit tests, build and end-to-end tests on every push.",
+    "Semantic HTML, keyboard support throughout, visible focus, reduced-motion support and WCAG AA contrast in both themes."
+  ]
+}

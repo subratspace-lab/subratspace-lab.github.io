@@ -1,0 +1,9 @@
+{
+  "name": "@skj/ui-tokens",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Design tokens shared by the shell and every remote so themes match across federation boundaries.",
+  "exports": {
+    "./tokens.css": "./tokens.css"
+  }
+}

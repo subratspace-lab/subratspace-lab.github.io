@@ -1,0 +1,15 @@
+node_modules/
+.next/
+out/
+dist/
+coverage/
+*.tsbuildinfo
+.env*.local
+.vercel/
+test-results/
+playwright-report/
+apps/shell/public/remotes/
+.DS_Store
+lighthouse-report/
+.claude/
+.mf/

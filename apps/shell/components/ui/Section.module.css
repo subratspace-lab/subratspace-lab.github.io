@@ -1,0 +1,23 @@
+.section {
+  padding-block: var(--space-8);
+  border-top: 1px solid var(--border);
+}
+
+.header {
+  display: grid;
+  gap: var(--space-3);
+  margin-bottom: var(--space-6);
+  max-width: var(--prose-max);
+}
+
+.intro {
+  color: var(--fg-muted);
+  font-size: var(--step-1);
+  line-height: 1.5;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding-block: var(--space-9);
+  }
+}

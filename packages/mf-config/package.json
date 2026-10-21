@@ -1,0 +1,20 @@
+{
+  "name": "@skj/mf-config",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "One webpack + Module Federation config factory shared by every remote.",
+  "main": "createRemoteConfig.mjs",
+  "exports": {
+    ".": "./createRemoteConfig.mjs"
+  },
+  "dependencies": {
+    "@module-federation/enhanced": "^2.9.2",
+    "@swc/core": "^1.16.0",
+    "css-loader": "^7.1.0",
+    "style-loader": "^4.0.0",
+    "swc-loader": "^0.2.7",
+    "webpack": "~5.111.0",
+    "webpack-cli": "^7.2.0"
+  }
+}

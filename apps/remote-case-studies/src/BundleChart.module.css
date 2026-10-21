@@ -1,0 +1,146 @@
+.root {
+  margin: 0;
+  display: grid;
+  gap: 1rem;
+  padding: 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg, 16px);
+  background: var(--bg-elevated);
+}
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem 1rem;
+}
+
+.caption {
+  color: var(--fg-muted);
+  font-size: 0.9375rem;
+}
+
+.total {
+  margin-top: 0.25rem;
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.totalDelta {
+  color: var(--fg-muted);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.viewToggle {
+  display: inline-flex;
+  padding: 2px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--bg-sunken);
+}
+
+.viewToggle button {
+  min-height: 32px;
+  padding: 0 0.75rem;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--fg-muted);
+  font: inherit;
+  font-size: 0.8125rem;
+  font-weight: 550;
+  cursor: pointer;
+}
+
+.viewToggle button[aria-pressed="true"] {
+  background: var(--bg-elevated);
+  color: var(--fg);
+  box-shadow: var(--shadow-sm);
+}
+
+.chart {
+  width: 100%;
+  min-width: 0;
+}
+
+.tooltip {
+  display: grid;
+  gap: 0.2rem;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg-elevated);
+  box-shadow: var(--shadow-md);
+  color: var(--fg);
+  font-size: 0.8125rem;
+}
+
+.tooltipTitle {
+  font-weight: 600;
+}
+
+.tooltipDelta {
+  color: var(--fg-muted);
+}
+
+.swatch {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 0.25rem;
+  border-radius: 999px;
+  vertical-align: middle;
+}
+
+.swatch[data-series="before"] {
+  background: var(--chart-before);
+}
+
+.swatch[data-series="after"] {
+  background: var(--chart-after);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.table th,
+.table td {
+  padding: 0.55rem 0.5rem;
+  border-top: 1px solid var(--border);
+  text-align: right;
+}
+
+.table th:first-child {
+  text-align: left;
+  font-weight: 500;
+}
+
+.table thead th {
+  border-top: 0;
+  color: var(--fg-muted);
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+
+.table tfoot th,
+.table tfoot td {
+  font-weight: 650;
+}
+
+.tableWrap {
+  overflow-x: auto;
+}

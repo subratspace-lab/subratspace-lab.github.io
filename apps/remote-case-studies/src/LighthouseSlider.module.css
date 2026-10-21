@@ -1,0 +1,217 @@
+.root {
+  margin: 0;
+  display: grid;
+  gap: var(--space-4, 1rem);
+}
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.caption {
+  color: var(--fg-muted);
+  font-size: 0.9375rem;
+}
+
+.stage {
+  position: relative;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg, 16px);
+  background: var(--bg-elevated);
+  overflow: hidden;
+  touch-action: pan-y;
+}
+
+/* Both panels occupy the same cell; "after" is clipped from the left by --pos. */
+.layer {
+  display: grid;
+}
+
+.afterLayer {
+  position: absolute;
+  inset: 0;
+  clip-path: inset(0 0 0 var(--pos));
+  background: var(--bg-elevated);
+}
+
+.panel {
+  padding: 1.25rem;
+  display: grid;
+  gap: 1rem;
+}
+
+/* Series identity is carried by a colored dot; the text itself stays in text tokens (AA). */
+.sideLabel::before,
+.chip::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 0.4rem;
+  border-radius: 999px;
+  vertical-align: 0.05em;
+}
+
+.panel[data-side="before"] .sideLabel::before,
+.chip[data-side="before"]::before {
+  background: var(--chart-before);
+}
+
+.panel[data-side="after"] .sideLabel::before,
+.chip[data-side="after"]::before {
+  background: var(--chart-after);
+}
+
+.panelHead {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.gauge {
+  width: 84px;
+  height: 84px;
+  flex: none;
+}
+
+.gaugeTrack {
+  fill: none;
+  stroke: var(--border);
+  stroke-width: 8;
+}
+
+.gaugeValue {
+  fill: none;
+  stroke-width: 8;
+  stroke-linecap: round;
+}
+
+.gaugeText {
+  fill: var(--fg);
+  font-family: var(--font-serif);
+  font-size: 28px;
+}
+
+.sideLabel {
+  color: var(--fg-muted);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.scoreLabel {
+  font-size: 1.125rem;
+}
+
+.metrics {
+  display: grid;
+  gap: 0;
+  margin: 0;
+}
+
+.metricRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.6rem 0;
+  border-top: 1px solid var(--border);
+  font-size: 0.9375rem;
+}
+
+.metricRow dt {
+  color: var(--fg-muted);
+}
+
+.metricRow dd {
+  margin: 0;
+  font-variant-numeric: tabular-nums;
+  font-weight: 550;
+  white-space: nowrap;
+}
+
+.delta {
+  margin-left: 0.5rem;
+  color: var(--fg-muted);
+  font-weight: 500;
+  font-size: 0.8125rem;
+}
+
+/* The native range input covers the stage for pointer + keyboard; it is visually hidden. */
+.range {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: ew-resize;
+  z-index: 3;
+}
+
+.handle {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  bottom: 0;
+  left: var(--pos);
+  width: 2px;
+  transform: translateX(-1px);
+  background: var(--fg);
+  pointer-events: none;
+}
+
+.grip {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  transform: translate(-50%, -50%);
+  border-radius: 999px;
+  background: var(--fg);
+  color: var(--bg);
+  box-shadow: var(--shadow-md);
+}
+
+.range:focus-visible + .handle .grip {
+  box-shadow: 0 0 0 3px var(--bg), 0 0 0 5px var(--accent);
+}
+
+/* Mirror the "after" panel so its score sits on the right, where the after layer is revealed. */
+.panel[data-side="after"] .panelHead {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+/* Fixed corner chips keep both scores readable wherever the handle is. */
+.chips {
+  position: absolute;
+  z-index: 2;
+  inset: auto 0.75rem 0.75rem;
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+.chip {
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  background: var(--bg-sunken);
+  border: 1px solid var(--border);
+  font-size: 0.75rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--fg);
+}
+
+
+.panel {
+  padding-bottom: 3rem;
+}

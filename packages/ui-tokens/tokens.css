@@ -1,0 +1,144 @@
+/*
+ * Design tokens. One accent (teal), warm neutrals, 1.25 modular type scale.
+ * Every text/background pair below meets WCAG AA (4.5:1) — ratios noted inline.
+ * Theme is driven by [data-theme] on <html>; without JS we fall back to the OS preference.
+ */
+
+:root {
+  color-scheme: light;
+
+  /* Neutrals (stone) */
+  --bg: #fafaf9;
+  --bg-elevated: #ffffff;
+  --bg-sunken: #f5f5f4;
+  --fg: #1c1917;          /* 16.9:1 on --bg */
+  --fg-muted: #57534e;    /* 7.3:1 on --bg */
+  --fg-subtle: #6b6560;   /* 5.4:1 on --bg — use for meta text only */
+  --border: #e7e5e4;
+  --border-strong: #d6d3d1;
+
+  /* Accent */
+  --accent: #0f766e;      /* 5.3:1 on --bg */
+  --accent-hover: #115e59;
+  --accent-fg: #ffffff;   /* 5.5:1 on --accent */
+  --accent-soft: #ccfbf1;
+  --accent-soft-fg: #134e4a;
+
+  /* Status (used sparingly in demos) */
+  --ok: #15803d;
+  --warn: #a16207;
+  --danger: #b91c1c;
+  --todo-bg: #fef3c7;
+  --todo-fg: #78350f;
+
+  /* Chart series (validated: CVD-separated, >=3:1 vs surface) */
+  --chart-before: #c2410c;
+  --chart-after: #0d9488;
+  --chart-grid: #e7e5e4;
+  --chart-axis: #6b6560;
+
+  --focus-ring: 0 0 0 2px var(--bg), 0 0 0 4px var(--accent);
+  --shadow-sm: 0 1px 2px rgb(28 25 23 / 0.06);
+  --shadow-md: 0 8px 24px -8px rgb(28 25 23 / 0.16);
+
+  /* Type */
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI Variable Text", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-serif: var(--font-fraunces, ui-serif, Georgia, "Times New Roman", serif);
+  --font-mono: ui-monospace, "SFMono-Regular", "Cascadia Code", Consolas, monospace;
+
+  --step--1: 0.8rem;
+  --step-0: 1rem;
+  --step-1: 1.25rem;
+  --step-2: 1.5625rem;
+  --step-3: clamp(1.6rem, 1.3rem + 1.2vw, 1.953rem);
+  --step-4: clamp(1.9rem, 1.4rem + 2vw, 2.441rem);
+  --step-5: clamp(2.3rem, 1.5rem + 3.2vw, 3.815rem);
+
+  --leading-tight: 1.15;
+  --leading-normal: 1.6;
+
+  /* Space (4px base) */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-pill: 999px;
+
+  --content-max: 72rem;
+  --prose-max: 40rem;
+  --gutter: clamp(1rem, 4vw, 2rem);
+
+  --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --duration: 180ms;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0c0a09;
+  --bg-elevated: #1c1917;
+  --bg-sunken: #151312;
+  --fg: #f5f5f4;          /* 18.1:1 */
+  --fg-muted: #a8a29e;    /* 7.8:1 */
+  --fg-subtle: #8f8984;   /* 5.6:1 */
+  --border: #292524;
+  --border-strong: #44403c;
+  --accent: #2dd4bf;      /* 10.6:1 */
+  --accent-hover: #5eead4;
+  --accent-fg: #042f2e;   /* 9.6:1 on --accent */
+  --accent-soft: #134e4a;
+  --accent-soft-fg: #ccfbf1;
+  --ok: #4ade80;
+  --warn: #facc15;
+  --danger: #f87171;
+  --todo-bg: #422006;
+  --todo-fg: #fde68a;
+  --chart-before: #ea580c;
+  --chart-after: #0d9488;
+  --chart-grid: #292524;
+  --chart-axis: #8f8984;
+  --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.4);
+  --shadow-md: 0 8px 24px -8px rgb(0 0 0 / 0.6);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    color-scheme: dark;
+    --bg: #0c0a09;
+    --bg-elevated: #1c1917;
+    --bg-sunken: #151312;
+    --fg: #f5f5f4;
+    --fg-muted: #a8a29e;
+    --fg-subtle: #8f8984;
+    --border: #292524;
+    --border-strong: #44403c;
+    --accent: #2dd4bf;
+    --accent-hover: #5eead4;
+    --accent-fg: #042f2e;
+    --accent-soft: #134e4a;
+    --accent-soft-fg: #ccfbf1;
+    --ok: #4ade80;
+    --warn: #facc15;
+    --danger: #f87171;
+    --todo-bg: #422006;
+    --todo-fg: #fde68a;
+    --chart-before: #ea580c;
+    --chart-after: #0d9488;
+    --chart-grid: #292524;
+    --chart-axis: #8f8984;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration: 0ms;
+  }
+}

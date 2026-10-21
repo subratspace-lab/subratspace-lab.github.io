@@ -1,0 +1,46 @@
+{
+  "name": "skj-portfolio",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Portfolio of Subrat Kumar Jena: Next.js shell with Module Federation remotes.",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "engines": {
+    "node": ">=20.11"
+  },
+  "scripts": {
+    "dev": "npm run build:remotes && concurrently -k -n shell,remotes -c cyan,magenta \"npm run dev -w @skj/shell\" \"npm run dev:remotes\"",
+    "dev:remotes": "npm run dev -w @skj/remote-case-studies",
+    "build:remotes": "npm run build -w @skj/remote-case-studies",
+    "build": "npm run build:remotes && npm run build -w @skj/shell",
+    "start": "npm run start -w @skj/shell",
+    "lint": "npm run lint --workspaces --if-present",
+    "typecheck": "npm run typecheck --workspaces --if-present && tsc -p e2e/tsconfig.json",
+    "test": "jest",
+    "test:e2e": "playwright test",
+    "preview": "serve apps/shell/out -l 3000",
+    "lighthouse": "node scripts/lighthouse.mjs",
+    "preview:ci": "serve apps/shell/out -l 4173 --no-port-switching"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
+    "@playwright/test": "^1.64.1",
+    "@swc/jest": "^0.2.39",
+    "@testing-library/jest-dom": "^7.0.1",
+    "@testing-library/react": "^16.3.3",
+    "@testing-library/user-event": "^14.6.8",
+    "@types/jest": "^29.5.14",
+    "concurrently": "^10.0.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "lighthouse": "^13.5.0",
+    "serve": "^14.2.6",
+    "wait-on": "^9.5.1"
+  },
+  "overrides": {
+    "webpack": "~5.111.0"
+  }
+}

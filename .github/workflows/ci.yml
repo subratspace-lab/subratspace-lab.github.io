@@ -1,0 +1,66 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  quality:
+    name: Lint, typecheck, test, build, e2e
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Unit tests
+        run: npm test -- --ci --coverage
+
+      - name: Build (remotes + static export)
+        run: npm run build
+
+      - name: Install Playwright Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: End-to-end tests (incl. axe a11y and 360px checks)
+        run: npm run test:e2e
+
+      - name: Lighthouse budget (≥95, median of 3)
+        # Shared CI runners are noisy; the report is uploaded either way and the step is
+        # informational so a slow runner can't block a merge. Run `npm run lighthouse` locally.
+        continue-on-error: true
+        run: |
+          npm run preview:ci &
+          npx wait-on -t 60000 http://localhost:4173
+          CHROME_PATH="$(which google-chrome || which chromium)" npm run lighthouse
+
+      - name: Upload reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: reports
+          path: |
+            playwright-report/
+            test-results/
+            lighthouse-report/
+            coverage/lcov-report/
+          retention-days: 14
+          if-no-files-found: ignore

@@ -1,0 +1,15 @@
+{
+  "name": "@skj/contracts",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Typed props for every module a remote exposes. The shell and remotes both compile against this, so a breaking prop change fails typecheck on both sides.",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.0",
+    "typescript": "^5.9.3"
+  }
+}

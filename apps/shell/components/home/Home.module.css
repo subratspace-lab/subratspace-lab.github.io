@@ -1,0 +1,555 @@
+/* ---------- Hero ---------- */
+
+.hero {
+  padding-block: var(--space-8) var(--space-7);
+}
+
+.heroTitle {
+  margin-top: var(--space-4);
+  font-size: clamp(2.6rem, 1.6rem + 5vw, 5rem);
+  letter-spacing: -0.03em;
+}
+
+.heroHeadline {
+  margin-top: var(--space-5);
+  max-width: 38rem;
+  font-size: var(--step-1);
+  line-height: 1.5;
+  color: var(--fg-muted);
+}
+
+.heroMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4) var(--space-7);
+  margin: var(--space-6) 0 0;
+}
+
+.heroMeta dt {
+  font-size: var(--step--1);
+  color: var(--fg-subtle);
+}
+
+.heroMeta dd {
+  margin: 0;
+  font-weight: 550;
+}
+
+.heroActions {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+}
+
+@media (min-width: 768px) {
+  .hero {
+    padding-block: var(--space-9) var(--space-8);
+  }
+}
+
+/* ---------- Metrics ---------- */
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 9.5rem), 1fr));
+  gap: 1px;
+  list-style: none;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.metric {
+  display: grid;
+  align-content: start;
+  gap: var(--space-1);
+  padding: var(--space-4);
+  background: var(--bg-elevated);
+}
+
+@media (min-width: 340px) and (max-width: 767px) {
+  .metrics {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Avoid an empty cell when the count is odd. */
+  .metric:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (min-width: 768px) {
+  .metric {
+    padding: var(--space-5);
+  }
+}
+
+.metricValue {
+  font-family: var(--font-serif);
+  font-size: var(--step-3);
+  line-height: 1.1;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+
+.metricLabel {
+  font-weight: 550;
+}
+
+.metricContext {
+  font-size: 0.875rem;
+  color: var(--fg-muted);
+}
+
+/* ---------- Project cards ---------- */
+
+.cards {
+  display: grid;
+  gap: var(--space-5);
+  list-style: none;
+}
+
+@media (min-width: 900px) {
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-5);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--bg-elevated);
+  transition: border-color var(--duration) var(--ease-out), box-shadow var(--duration) var(--ease-out);
+}
+
+.card:hover,
+.card:focus-within {
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-md);
+}
+
+.cardMeta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-2);
+  font-size: 0.8125rem;
+  color: var(--fg-subtle);
+}
+
+.confidential {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.cardTitle {
+  font-size: var(--step-2);
+}
+
+.cardBody {
+  color: var(--fg-muted);
+}
+
+.cardOwnership {
+  font-size: 0.875rem;
+  font-weight: 550;
+}
+
+.cardMetrics {
+  display: grid;
+  gap: var(--space-1);
+  list-style: none;
+  font-size: 0.9375rem;
+}
+
+.cardMetrics strong {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+
+/* ---------- Experience ---------- */
+
+.experience {
+  display: grid;
+  gap: var(--space-7);
+}
+
+@media (min-width: 900px) {
+  .experience {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+.timeline {
+  list-style: none;
+}
+
+.job {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.jobHead {
+  display: grid;
+  gap: var(--space-1);
+}
+
+.jobTitle {
+  font-size: var(--step-2);
+}
+
+.jobCompany {
+  font-weight: 550;
+}
+
+.jobDates {
+  font-size: 0.9375rem;
+  color: var(--fg-muted);
+}
+
+.jobHighlights {
+  display: grid;
+  gap: var(--space-3);
+  padding-left: 1.1em;
+}
+
+.jobHighlights li::marker {
+  color: var(--accent);
+}
+
+.sideFacts {
+  display: grid;
+  gap: var(--space-6);
+  align-content: start;
+}
+
+.factTitle {
+  margin-bottom: var(--space-2);
+  font-family: var(--font-sans);
+  font-size: var(--step--1);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}
+
+.plainList {
+  display: grid;
+  gap: var(--space-1);
+  list-style: none;
+}
+
+/* ---------- Skills ---------- */
+
+.skills {
+  display: grid;
+  gap: var(--space-5);
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .skills {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-6) var(--space-7);
+  }
+}
+
+.skillGroup {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.skillGroup dt {
+  font-weight: 600;
+}
+
+.skillGroup dd {
+  margin: 0;
+}
+
+/* ---------- Contact ---------- */
+
+.contact {
+  max-width: var(--prose-max);
+}
+
+.contactLead {
+  font-size: var(--step-1);
+  line-height: 1.5;
+  color: var(--fg-muted);
+}
+
+/* ---------- Entrance motion (CSS-only: runs at first paint, never waits for hydration) ---------- */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Title and headline slide without fading, so they still count for LCP immediately. */
+@keyframes slideUp {
+  from {
+    transform: translateY(14px);
+  }
+  to {
+    transform: none;
+  }
+}
+
+.enter {
+  animation: fadeUp 640ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  animation-delay: calc(var(--i, 0) * 90ms + 60ms);
+}
+
+.enterSlide {
+  animation: slideUp 640ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  animation-delay: calc(var(--i, 0) * 90ms);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .enter,
+  .enterSlide {
+    animation: none;
+  }
+}
+
+/* ---------- Skim mode ---------- */
+
+.glance {
+  display: grid;
+  gap: var(--space-3);
+  margin: var(--space-6) 0 0;
+  padding: var(--space-4) var(--space-5);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius-md);
+  background: var(--bg-elevated);
+  max-width: 44rem;
+}
+
+.glance dt {
+  font-size: var(--step--1);
+  color: var(--fg-subtle);
+}
+
+.glance dd {
+  margin: 0;
+  font-weight: 500;
+}
+
+.modeHint {
+  margin-top: var(--space-5);
+  font-size: 0.9375rem;
+  color: var(--fg-muted);
+}
+
+.modeHintButton {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--accent);
+  font-weight: 550;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 1px;
+  cursor: pointer;
+}
+
+.modeHintButton:hover {
+  color: var(--accent-hover);
+}
+
+/* ---------- Card hover lift ---------- */
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .card {
+    transition:
+      border-color var(--duration) var(--ease-out),
+      box-shadow 240ms var(--ease-out),
+      transform 240ms var(--ease-out);
+  }
+
+  .card:hover {
+    transform: translateY(-3px);
+  }
+
+}
+
+.contactEmail {
+  color: var(--fg);
+  font-weight: 550;
+  word-break: break-all;
+}
+
+/* ---------- Expandable card ---------- */
+
+.cards {
+  align-items: start;
+}
+
+/* An expanded card takes the full row so its details have room to breathe. */
+.cards > li:has([data-expanded]) {
+  grid-column: 1 / -1;
+}
+
+.card[data-expanded] {
+  border-color: var(--accent);
+  box-shadow: var(--shadow-md);
+  transform: none;
+}
+
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  align-self: flex-start;
+  min-height: 40px;
+  margin-top: var(--space-2);
+  padding: 0 var(--space-4);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-pill);
+  background: var(--bg-elevated);
+  color: var(--fg);
+  font-size: 0.9375rem;
+  font-weight: 550;
+  cursor: pointer;
+  transition: border-color var(--duration) var(--ease-out), color var(--duration) var(--ease-out);
+}
+
+.toggle:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.chevron {
+  transition: transform 220ms var(--ease-out);
+}
+
+.toggle[aria-expanded="true"] .chevron {
+  transform: rotate(180deg);
+}
+
+.details {
+  overflow: hidden;
+}
+
+.detailsInner {
+  display: grid;
+  gap: var(--space-5);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--border);
+}
+
+.facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr));
+  gap: var(--space-3) var(--space-5);
+  margin: 0;
+}
+
+.facts dt {
+  font-size: var(--step--1);
+  color: var(--fg-subtle);
+}
+
+.facts dd {
+  margin: 0;
+  font-weight: 550;
+}
+
+.detailsGrid {
+  display: grid;
+  gap: var(--space-5);
+}
+
+@media (min-width: 760px) {
+  .detailsGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-5) var(--space-7);
+  }
+}
+
+.detailsTitle {
+  margin-bottom: var(--space-2);
+  font-family: var(--font-sans);
+  font-size: var(--step--1);
+  font-weight: 650;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}
+
+.detailsGrid p {
+  color: var(--fg-muted);
+}
+
+.detailsList {
+  display: grid;
+  gap: var(--space-2);
+  padding-left: 1.15em;
+  color: var(--fg-muted);
+}
+
+.detailsList li::marker {
+  color: var(--accent);
+}
+
+.fullLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  justify-self: start;
+  min-height: 44px;
+  padding: 0 var(--space-5);
+  border-radius: var(--radius-pill);
+  background: var(--accent);
+  color: var(--accent-fg);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.fullLink:hover {
+  background: var(--accent-hover);
+  color: var(--accent-fg);
+}
+
+.detailsActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.extLink {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 var(--space-5);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-pill);
+  color: var(--fg);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.extLink:hover {
+  border-color: var(--fg);
+  color: var(--fg);
+}

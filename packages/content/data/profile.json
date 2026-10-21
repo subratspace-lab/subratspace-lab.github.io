@@ -1,0 +1,17 @@
+{
+  "name": "Subrat Kumar Jena",
+  "role": "Software Engineer",
+  "focus": "Frontend · React + TypeScript",
+  "location": "Bengaluru, India",
+  "yearsExperience": 5,
+  "headline": "I build React and TypeScript frontends for data-heavy platforms: micro-frontends, role-based access, real-time dashboards and performance work.",
+  "summary": [
+    "I spent five years at Clairvoyant (acquired by EXL Services in 2023) shipping three client platforms end to end: an enterprise AI agent management platform, a multi-tenant SaaS e-learning system, and an EdTech product with recurring billing.",
+    "My work was about 70% frontend and 30% backend. I owned component architecture, auth and access control, dashboards and performance on the frontend, and wrote Node.js, PostgreSQL and AWS serverless code when the frontend needed it.",
+    "The client work is confidential, so there are no real screens, client names or code here. Each case study explains the problem, my decisions and the results I can share."
+  ],
+  "email": "subratspace@gmail.com",
+  "linkedin": "https://www.linkedin.com/in/subrat-kumar-jena-3800a610b",
+  "resumePath": "/Subrat_Kumar_Jena_Resume.pdf",
+  "siteUrl": "https://subratspace-lab.github.io"
+}

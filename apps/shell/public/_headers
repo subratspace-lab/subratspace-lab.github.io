@@ -1,0 +1,12 @@
+# Netlify / Cloudflare Pages headers (Vercel uses vercel.json at the repo root).
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  X-Frame-Options: DENY
+
+/remotes/*/remoteEntry.js
+  Cache-Control: public, max-age=300, stale-while-revalidate=86400
+
+/_next/static/*
+  Cache-Control: public, max-age=31536000, immutable

@@ -1,0 +1,39 @@
+[
+  {
+    "id": "lighthouse",
+    "label": "Lighthouse performance",
+    "display": "62 → 88",
+    "context": "Enterprise AI agent platform",
+    "projectSlug": "ai-agentic-platform",
+    "before": 62,
+    "after": 88
+  },
+  {
+    "id": "bundle",
+    "label": "Smaller bundle",
+    "display": "~30%",
+    "context": "Code splitting, memoization, lazy loading",
+    "projectSlug": "ai-agentic-platform"
+  },
+  {
+    "id": "mttd",
+    "label": "Faster frontend issue detection (MTTD)",
+    "display": "40%",
+    "context": "Peak exam periods, 10K+ concurrent users",
+    "projectSlug": "saas-elearning"
+  },
+  {
+    "id": "payments",
+    "label": "Fewer failed payment follow-ups",
+    "display": "60%",
+    "context": "Stripe webhooks for recurring billing",
+    "projectSlug": "edtech-platform"
+  },
+  {
+    "id": "mvp",
+    "label": "MVP delivered early",
+    "display": "2 weeks",
+    "context": "Zero critical post-launch defects",
+    "projectSlug": "edtech-platform"
+  }
+]

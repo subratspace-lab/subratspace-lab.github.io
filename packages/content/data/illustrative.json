@@ -1,0 +1,24 @@
+{
+  "_note": "Only lighthouse.score is a verified number (62 → 88). Every other value is illustrative, chosen to be consistent with the verified ~30% bundle reduction, and is labeled as such in the UI.",
+  "lighthouse": {
+    "score": { "before": 62, "after": 88 },
+    "metrics": [
+      { "id": "fcp", "label": "First Contentful Paint", "unit": "s", "before": 2.8, "after": 1.5, "lowerIsBetter": true },
+      { "id": "lcp", "label": "Largest Contentful Paint", "unit": "s", "before": 5.4, "after": 2.7, "lowerIsBetter": true },
+      { "id": "tbt", "label": "Total Blocking Time", "unit": "ms", "before": 620, "after": 190, "lowerIsBetter": true },
+      { "id": "cls", "label": "Cumulative Layout Shift", "unit": "", "before": 0.12, "after": 0.04, "lowerIsBetter": true },
+      { "id": "si", "label": "Speed Index", "unit": "s", "before": 4.9, "after": 3.0, "lowerIsBetter": true }
+    ]
+  },
+  "bundle": {
+    "unit": "KB (gzip)",
+    "chunks": [
+      { "id": "vendor", "label": "Framework vendor", "beforeKb": 320, "afterKb": 260 },
+      { "id": "dashboards", "label": "Dashboard routes", "beforeKb": 210, "afterKb": 140 },
+      { "id": "charts", "label": "Charting", "beforeKb": 180, "afterKb": 110 },
+      { "id": "ui", "label": "Shared UI", "beforeKb": 120, "afterKb": 85 },
+      { "id": "auth", "label": "Auth (MSAL)", "beforeKb": 90, "afterKb": 80 },
+      { "id": "admin", "label": "Admin routes", "beforeKb": 80, "afterKb": 25 }
+    ]
+  }
+}
