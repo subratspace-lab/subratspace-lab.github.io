@@ -225,7 +225,7 @@
     "slug": "pbi-autobuilder",
     "kind": "personal",
     "title": "PBI AutoBuilder",
-    "oneLiner": "From raw data and a client brief to a ready-to-open Power BI dashboard: a local React + Node.js app that generates the cleaning, model, DAX and report for you.",
+    "oneLiner": "From raw data and a client brief to a ready-to-open Power BI dashboard: a React + Node.js app that generates the cleaning, model, DAX and report for you.",
     "period": {
       "start": 2026,
       "end": 2026
@@ -251,7 +251,7 @@
         "Analysts spend hours clicking through the same transformations, and beginners often get the model or the DAX wrong."
       ],
       "constraints": [
-        "It had to run only on localhost. The AI receives schema statistics and about 15 sample rows, never the full dataset.",
+        "Data had to stay private: it was designed to run locally, and the AI receives only schema statistics and about 15 sample rows, never the full dataset.",
         "It had to produce reliable output with free or small AI models, and with no AI at all.",
         "The exported project had to refresh on any PC, with no file paths to fix.",
         "What the user previews had to match exactly what Power BI loads."
@@ -309,7 +309,7 @@
         },
         {
           "title": "Private and provider-agnostic AI",
-          "body": "The app runs only on localhost and works offline through Ollama. Any OpenAI-compatible model (Google Gemini, Groq, OpenRouter, Ollama) can be switched from the Settings page."
+          "body": "It can run entirely on your own machine and work offline through Ollama, and a hosted version is available to try. Any OpenAI-compatible model (Google Gemini, Groq, OpenRouter, Ollama) can be switched from the Settings page."
         }
       ],
       "result": [
@@ -351,6 +351,10 @@
       ]
     },
     "links": [
+      {
+        "label": "Live app",
+        "href": "https://pbi-autobuilder.onrender.com/"
+      },
       {
         "label": "GitHub",
         "href": "https://github.com/subratspace-lab/pbi-autobuilder"

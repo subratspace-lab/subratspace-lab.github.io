@@ -56,6 +56,7 @@ test.describe("home", () => {
     await expect(page.locator("#work").getByRole("article")).toHaveCount(3);
 
     await personal.getByRole("button", { name: /View details for PBI AutoBuilder/ }).click();
+    await expect(personal.getByRole("link", { name: /Live app/ })).toHaveAttribute("href", "https://pbi-autobuilder.onrender.com/");
     await expect(personal.getByRole("link", { name: /GitHub/ })).toHaveAttribute("href", "https://github.com/subratspace-lab/pbi-autobuilder");
     await personal.getByRole("link", { name: "Read the full case study" }).click();
 

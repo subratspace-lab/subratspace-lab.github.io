@@ -78,7 +78,10 @@ describe("content hard rules", () => {
   it("keeps personal projects out of the featured client set, with a public link", () => {
     const pbi = projects.find((p) => p.slug === "pbi-autobuilder");
     expect(pbi).toMatchObject({ kind: "personal", confidential: false, period: { start: 2026, end: 2026 } });
-    expect(pbi?.links[0]?.href).toBe("https://github.com/subratspace-lab/pbi-autobuilder");
+    expect(pbi?.links.map((l) => l.href)).toEqual([
+      "https://pbi-autobuilder.onrender.com/",
+      "https://github.com/subratspace-lab/pbi-autobuilder",
+    ]);
     expect(featuredProjects.map((p) => p.slug)).not.toContain("pbi-autobuilder");
   });
 
