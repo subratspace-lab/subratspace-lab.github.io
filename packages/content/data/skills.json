@@ -2,31 +2,85 @@
   {
     "id": "frontend",
     "label": "Frontend",
-    "items": ["React.js (v16–19)", "TypeScript", "Next.js", "Redux Toolkit", "Webpack Module Federation", "Recharts"]
+    "items": [
+      "React.js (v16–19)",
+      "TypeScript",
+      "JavaScript",
+      "Next.js",
+      "HTML5",
+      "CSS3"
+    ]
+  },
+  {
+    "id": "backend",
+    "label": "Backend & APIs",
+    "items": [
+      "Node.js",
+      "Express",
+      "RESTful APIs",
+      "Axios",
+      "Azure MSAL",
+      "OAuth 2.0"
+    ]
+  },
+  {
+    "id": "databases",
+    "label": "Databases",
+    "items": [
+      "PostgreSQL",
+      "AWS DynamoDB"
+    ]
+  },
+  {
+    "id": "cloud",
+    "label": "Cloud & DevOps",
+    "items": [
+      "AWS Lambda",
+      "EC2",
+      "S3",
+      "API Gateway",
+      "CloudWatch",
+      "Azure"
+    ]
+  },
+  {
+    "id": "architecture",
+    "label": "State & architecture",
+    "items": [
+      "Redux Toolkit",
+      "Context API",
+      "React Router",
+      "Micro-frontends (Webpack Module Federation)"
+    ]
   },
   {
     "id": "styling",
     "label": "UI & styling",
-    "items": ["Tailwind CSS", "Ant Design", "Styled-Components"]
-  },
-  {
-    "id": "backend",
-    "label": "Backend & data",
-    "items": ["Node.js", "Express", "PostgreSQL", "DynamoDB"]
-  },
-  {
-    "id": "cloud",
-    "label": "Cloud",
-    "items": ["AWS Lambda", "EC2", "S3", "API Gateway", "CloudWatch"]
-  },
-  {
-    "id": "auth",
-    "label": "Auth",
-    "items": ["Azure MSAL", "OAuth 2.0"]
+    "items": [
+      "Tailwind CSS",
+      "Ant Design",
+      "Styled-Components",
+      "Recharts"
+    ]
   },
   {
     "id": "testing",
     "label": "Testing",
-    "items": ["Jest", "React Testing Library"]
+    "items": [
+      "Jest",
+      "React Testing Library"
+    ]
+  },
+  {
+    "id": "tools",
+    "label": "Developer & AI tools",
+    "items": [
+      "Git",
+      "Postman",
+      "VS Code",
+      "GitHub Copilot",
+      "Replit",
+      "Windsurf"
+    ]
   }
 ]

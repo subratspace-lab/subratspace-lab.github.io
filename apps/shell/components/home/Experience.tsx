@@ -35,13 +35,17 @@ export function ExperienceList() {
           </p>
           <p className="muted">
             {education.start}–{education.end}
+            {education.grade && ` · ${education.grade}`}
           </p>
         </div>
         <div>
           <h3 className={styles.factTitle}>Awards</h3>
-          <ul className={styles.plainList}>
+          <ul className={styles.awards}>
             {awards.map((a) => (
-              <li key={a}>{a}</li>
+              <li key={a.name}>
+                <span className={styles.awardName}>{a.name}</span>
+                <span className="muted">{a.description}</span>
+              </li>
             ))}
           </ul>
         </div>

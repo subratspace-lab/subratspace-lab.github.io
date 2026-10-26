@@ -34,7 +34,11 @@ export const educationSchema = z.object({
   school: z.string(),
   start: z.number().int(),
   end: z.number().int(),
+  grade: z.string().optional(),
 });
+
+export const awardSchema = z.object({ name: z.string(), description: z.string() });
+export type Award = z.infer<typeof awardSchema>;
 
 export const skillGroupSchema = z.object({
   id: z.string(),

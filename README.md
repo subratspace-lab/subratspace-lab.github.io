@@ -5,7 +5,7 @@
 
 **Live: https://subratspace-lab.github.io**
 
-Personal portfolio for a frontend-focused Software Engineer (React + TypeScript). The site proves the skills it describes: a Next.js shell loads an independently built **Webpack Module Federation** remote for the interactive case-study charts, every project has a two-level "View details" experience backed by typed content, and quality is enforced by CI.
+Personal portfolio for a Full Stack Software Engineer (React, TypeScript, Node.js, PostgreSQL, AWS). The site proves the skills it describes: a Next.js shell loads an independently built **Webpack Module Federation** remote for the interactive case-study charts, every project has a two-level "View details" experience backed by typed content, and quality is enforced by CI.
 
 It is a **fully static export**: no server, so it deploys for free on Vercel's Hobby plan, GitHub Pages, Netlify or Cloudflare Pages.
 

@@ -553,3 +553,19 @@
   border-color: var(--fg);
   color: var(--fg);
 }
+
+.awards {
+  display: grid;
+  gap: var(--space-3);
+  list-style: none;
+}
+
+.awards li {
+  display: grid;
+  gap: var(--space-1);
+  font-size: 0.9375rem;
+}
+
+.awardName {
+  font-weight: 600;
+}

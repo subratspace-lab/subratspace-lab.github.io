@@ -1,13 +1,13 @@
 {
   "name": "Subrat Kumar Jena",
-  "role": "Software Engineer",
-  "focus": "Frontend · React + TypeScript",
+  "role": "Full Stack Software Engineer",
+  "focus": "React · Node.js · AWS",
   "location": "Bengaluru, India",
   "yearsExperience": 5,
-  "headline": "I build React and TypeScript frontends for data-heavy platforms: micro-frontends, role-based access, real-time dashboards and performance work.",
+  "headline": "I build full-stack web applications with React, TypeScript, Node.js, PostgreSQL and AWS: micro-frontends, REST APIs, role-based access and real-time dashboards.",
   "summary": [
     "I spent five years at Clairvoyant (acquired by EXL Services in 2023) shipping three client platforms end to end: an enterprise AI agent management platform, a multi-tenant SaaS e-learning system, and an EdTech product with recurring billing.",
-    "My work was about 70% frontend and 30% backend. I owned component architecture, auth and access control, dashboards and performance on the frontend, and wrote Node.js, PostgreSQL and AWS serverless code when the frontend needed it.",
+    "I work across the whole stack: React and TypeScript interfaces, Node.js and Express REST APIs, PostgreSQL and DynamoDB, and AWS services from EC2 to Lambda and API Gateway. I have also owned auth and access control, real-time dashboards and performance.",
     "The client work is confidential, so there are no real screens, client names or code here. Each case study explains the problem, my decisions and the results I can share."
   ],
   "email": "subratspace@gmail.com",

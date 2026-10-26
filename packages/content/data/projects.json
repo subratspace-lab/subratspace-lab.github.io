@@ -52,6 +52,10 @@
         {
           "title": "Cutting the bundle",
           "body": "I used code splitting, memoization and lazy loading to cut the bundle by about 30%, which took the Lighthouse performance score from 62 to 88."
+        },
+        {
+          "title": "GenAI-assisted delivery",
+          "body": "I used GitHub Copilot heavily throughout the build for code generation, which sped up component and feature delivery while I kept ownership of the architecture and reviews."
         }
       ],
       "result": [
@@ -67,7 +71,8 @@
         "Axios",
         "Azure MSAL",
         "OAuth 2.0",
-        "REST"
+        "REST",
+        "GitHub Copilot"
       ]
     },
     "links": []
@@ -76,13 +81,13 @@
     "slug": "saas-elearning",
     "kind": "client",
     "title": "SaaS E-Learning & Publication Platform",
-    "oneLiner": "A multi-tenant LMS split into independently deployable micro-frontends with Webpack Module Federation.",
+    "oneLiner": "A multi-tenant LMS split into independently deployable micro-frontends, with Node.js and PostgreSQL APIs on AWS.",
     "period": {
       "start": 2023,
       "end": 2025
     },
     "employer": "Clairvoyant (EXL)",
-    "ownership": "~50–60% of the frontend, plus backend contributions",
+    "ownership": "Full-stack features across client and server",
     "featured": true,
     "confidential": true,
     "stack": [
@@ -114,19 +119,19 @@
       "decisions": [
         {
           "title": "Micro-frontends with Module Federation",
-          "body": "I architected the LMS as a host with Course, Exam and Admin remotes using Webpack Module Federation, so each module could build and deploy independently."
+          "body": "I architected the LMS as a host with Course, Exam and Admin remotes using Webpack Module Federation, so each module could build and deploy independently. Teams could work in parallel, and a failure in one module stayed in that module."
         },
         {
-          "title": "Predictable state across modules",
-          "body": "I used Redux Toolkit and React Router v6 for state and routing inside the modules I owned, roughly 50–60% of the frontend."
+          "title": "Full-stack LMS features",
+          "body": "I built course management, exam workflows and student performance tracking end to end: React, TypeScript, Redux Toolkit and React Router v6 on the client, and Node.js, Express and PostgreSQL on the server."
+        },
+        {
+          "title": "REST APIs on AWS",
+          "body": "I built REST APIs with Node.js and Express on AWS EC2, backed by PostgreSQL, with S3 for static assets and CloudWatch for monitoring. That cut frontend mean time to detect issues by 40% during peak exam periods with 10K+ concurrent users."
         },
         {
           "title": "Admin dashboards",
-          "body": "I built the admin dashboards with Ant Design and Styled-Components. Admin screens are mostly dense tables, forms, filters and date pickers, and Ant Design ships all of those with accessibility and keyboard support built in. That let me spend the time on admin workflows instead of building primitives, while Styled-Components kept the theme consistent with the rest of the platform."
-        },
-        {
-          "title": "Backend work for faster detection",
-          "body": "I contributed backend work in Node.js, Express and PostgreSQL on EC2, plus Lambda, S3 and CloudWatch. That cut frontend mean time to detect issues by 40% during peak exam periods."
+          "body": "I built the admin dashboards with Ant Design and Styled-Components, wired to the REST APIs through Axios for real-time data and reporting. Admin screens are mostly dense tables, forms, filters and date pickers, and Ant Design ships all of those with accessibility and keyboard support built in. That let me spend the time on admin workflows instead of building primitives, while Styled-Components kept the theme consistent with the rest of the platform."
         },
         {
           "title": "Standards that scale the team",
@@ -135,7 +140,7 @@
       ],
       "result": [
         "Frontend MTTD dropped by 40% during peak exam periods with 10K+ concurrent users.",
-        "Course, Exam and Admin deployed independently.",
+        "Course, Exam and Admin deployed independently, and teams developed them in parallel.",
         "Onboarding got faster and the UI bug rate went down after the shared library and review standards."
       ],
       "tech": [
@@ -150,7 +155,6 @@
         "Express",
         "PostgreSQL",
         "AWS EC2",
-        "AWS Lambda",
         "S3",
         "CloudWatch"
       ]
@@ -161,19 +165,20 @@
     "slug": "edtech-platform",
     "kind": "client",
     "title": "EdTech Learning Platform",
-    "oneLiner": "A course platform where learners pay to enroll and learn: student dashboards, instructor portals and Stripe billing on serverless AWS.",
+    "oneLiner": "A course platform where learners pay to enroll and learn: React and Next.js on the client, Node.js on AWS Lambda behind API Gateway, and Stripe billing.",
     "period": {
       "start": 2021,
       "end": 2022
     },
     "employer": "Clairvoyant (EXL)",
-    "ownership": "One of a 4-person team",
+    "ownership": "Full-stack, in a 4-person team",
     "featured": true,
     "confidential": true,
     "stack": [
       "React",
       "Next.js",
       "TypeScript",
+      "Node.js",
       "AWS Lambda",
       "API Gateway",
       "DynamoDB",
@@ -189,19 +194,23 @@
         "It needed student dashboards, instructor portals and course workflows, with payments and recurring billing that worked without manual chasing."
       ],
       "constraints": [
-        "A 4-person team.",
+        "A 4-person agile team, so everyone worked across the stack.",
         "Serverless AWS: Lambda, API Gateway and DynamoDB.",
         "Recurring billing and invoicing had to run without manual chasing.",
         "A fixed MVP deadline."
       ],
       "decisions": [
         {
-          "title": "Next.js for the product surfaces",
-          "body": "I built student dashboards, instructor portals and course workflows in React, Next.js and TypeScript."
+          "title": "End-to-end product features",
+          "body": "I built student dashboards, instructor portals and course workflows end to end: React, Next.js and TypeScript on the client, and Node.js on the server."
+        },
+        {
+          "title": "Serverless APIs",
+          "body": "I wrote Node.js Lambda functions and REST APIs exposed through API Gateway, with DynamoDB for persistence, so the backend scaled without servers to manage."
         },
         {
           "title": "Webhook-driven billing",
-          "body": "I integrated Stripe with webhook handling for recurring billing and automated invoicing, so payment state changes reached the app as they happened. Failed payment follow-ups dropped by 60%."
+          "body": "I integrated Stripe with webhook event handling for recurring subscription billing and automated invoicing, so payment state changes reached the app as they happened. Failed payment follow-ups dropped by 60%."
         }
       ],
       "result": [
@@ -213,10 +222,12 @@
         "React",
         "Next.js",
         "TypeScript",
+        "Node.js",
         "AWS Lambda",
         "API Gateway",
         "DynamoDB",
-        "Stripe"
+        "Stripe",
+        "REST"
       ]
     },
     "links": []

@@ -30,8 +30,8 @@ export function Hero() {
             <dd>{profile.location}</dd>
           </div>
           <div>
-            <dt>Split</dt>
-            <dd>~70% frontend · ~30% backend</dd>
+            <dt>Core stack</dt>
+            <dd>React · Node.js · PostgreSQL · AWS</dd>
           </div>
         </dl>
 
@@ -51,12 +51,16 @@ export function Hero() {
               <dt>Education</dt>
               <dd>
                 {education.degree}, {education.school}
-                <span className="muted"> · {education.end}</span>
+                <span className="muted">
+                  {" "}
+                  · {education.end}
+                  {education.grade && ` · ${education.grade}`}
+                </span>
               </dd>
             </div>
             <div>
               <dt>Awards</dt>
-              <dd>{awards.join(" · ")}</dd>
+              <dd>{awards.map((a) => a.name).join(" · ")}</dd>
             </div>
           </dl>
         )}

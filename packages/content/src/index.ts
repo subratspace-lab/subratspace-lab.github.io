@@ -10,6 +10,7 @@ import companiesJson from "../data/companies.json";
 import illustrativeJson from "../data/illustrative.json";
 import siteBuildJson from "../data/site-build.json";
 import {
+  awardSchema,
   companySchema,
   educationSchema,
   experienceSchema,
@@ -30,7 +31,7 @@ export * from "./schema";
 export const profile = profileSchema.parse(profileJson);
 export const experience = z.array(experienceSchema).parse(experienceJson);
 export const education = educationSchema.parse(educationJson);
-export const awards = z.array(z.string()).parse(awardsJson);
+export const awards = z.array(awardSchema).parse(awardsJson);
 export const skills = z.array(skillGroupSchema).parse(skillsJson);
 export const metrics = z.array(metricSchema).parse(metricsJson);
 export const projects = z.array(projectSchema).parse(projectsJson);

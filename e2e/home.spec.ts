@@ -5,7 +5,7 @@ test.describe("home", () => {
     await page.goto("/");
     await expect(page).toHaveTitle(/Subrat Kumar Jena/);
     await expect(page.getByRole("heading", { level: 1 })).toHaveText("Subrat Kumar Jena");
-    await expect(page.getByText("Software Engineer · Frontend")).toBeVisible();
+    await expect(page.getByText("Full Stack Software Engineer · React · Node.js · AWS")).toBeVisible();
     await expect(page.getByRole("link", { name: "Download résumé" })).toHaveAttribute("href", "/Subrat_Kumar_Jena_Resume.pdf");
     await expect(page.getByRole("button", { name: "Email me" }).first()).toBeVisible();
   });
@@ -40,7 +40,7 @@ test.describe("home", () => {
     const card = work.getByRole("article").filter({ hasText: "SaaS E-Learning & Publication Platform" });
     await expect(card.getByRole("heading", { name: "Key decisions" })).toBeVisible();
     await expect(card).toContainText("Micro-frontends with Module Federation");
-    await expect(card).toContainText("~50–60% of the frontend, plus backend contributions");
+    await expect(card).toContainText("Full-stack features across client and server");
 
     await card.getByRole("link", { name: "Read the full case study" }).click();
     await expect(page).toHaveURL(/\/work\/saas-elearning$/);

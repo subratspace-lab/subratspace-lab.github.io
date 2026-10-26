@@ -33,6 +33,11 @@ describe("content hard rules", () => {
     expect(allContent).not.toMatch(/\b\d{10,}\b/);
   });
 
+  it("presents Subrat as a full-stack engineer", () => {
+    expect(profile.role).toBe("Full Stack Software Engineer");
+    expect(allContent).not.toMatch(/70% frontend/i);
+  });
+
   it("uses the verified contact details", () => {
     expect(profile.email).toBe("subratspace@gmail.com");
     expect(profile.linkedin).toContain("linkedin.com/in/subrat-kumar-jena-3800a610b");
@@ -46,8 +51,9 @@ describe("content hard rules", () => {
       start: "2021-02",
       end: "2026-04",
     });
-    expect(education).toEqual({ degree: "B.Tech", school: "Indira Gandhi Institute of Technology", start: 2013, end: 2017 });
-    expect(awards).toEqual(["Reliable Value Award", "Team Player Value Award"]);
+    expect(education).toMatchObject({ school: "Indira Gandhi Institute of Technology", start: 2013, end: 2017, grade: "CGPA 7.9 / 10" });
+    expect(education.degree).toMatch(/^B.Tech/);
+    expect(awards.map((a) => a.name)).toEqual(["Reliable Value Award", "Team Player Value Award"]);
   });
 
   it("keeps headline metrics at their verified values", () => {

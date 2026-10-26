@@ -1,1 +1,10 @@
-["Reliable Value Award", "Team Player Value Award"]
+[
+  {
+    "name": "Reliable Value Award",
+    "description": "For consistent delivery ownership and cross-functional client collaboration under tight deadlines."
+  },
+  {
+    "name": "Team Player Value Award",
+    "description": "For going above and beyond, mentoring peers and driving team cohesion on multi-sprint deliverables."
+  }
+]

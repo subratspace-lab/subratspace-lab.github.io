@@ -31,7 +31,7 @@ describe("ProjectCard", () => {
 
     expect(toggle).toHaveAttribute("aria-expanded", "true");
     expect(toggle).toHaveAttribute("aria-controls", expect.any(String));
-    expect(screen.getByText("One of a 4-person team")).toBeInTheDocument();
+    expect(screen.getByText("Full-stack, in a 4-person team")).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: "Key decisions" })).toBeInTheDocument();
     expect(screen.getByText("Webhook-driven billing")).toBeInTheDocument();
     expect(screen.getByText("The MVP shipped two weeks ahead of schedule.")).toBeInTheDocument();

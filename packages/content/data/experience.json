@@ -7,10 +7,10 @@
     "end": "2026-04",
     "location": "Bengaluru, India",
     "highlights": [
-      "Led about 60–70% of the frontend for an enterprise AI agent management platform and raised its Lighthouse performance score from 62 to 88.",
-      "Architected a micro-frontend system with Webpack Module Federation for a multi-tenant LMS serving 10K+ concurrent users at peak.",
-      "Integrated Stripe recurring billing for an EdTech platform, cutting failed payment follow-ups by 60%.",
-      "Built a shared component library and PR review standards that sped up onboarding."
+      "Led about 60–70% of the frontend for an enterprise AI agent management platform, designed its role-based access model across routing and API authorization, and raised its Lighthouse performance score from 62 to 88.",
+      "Architected a micro-frontend LMS with Webpack Module Federation and built its REST APIs with Node.js, Express and PostgreSQL on AWS EC2, serving 10K+ concurrent users at peak.",
+      "Built serverless Node.js services on AWS Lambda, API Gateway and DynamoDB, and integrated Stripe recurring billing that cut failed payment follow-ups by 60%.",
+      "Set up a shared component library and PR review standards that sped up onboarding and lowered the UI bug rate."
     ]
   }
 ]
